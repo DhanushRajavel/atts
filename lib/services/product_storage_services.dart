@@ -5,7 +5,7 @@ import 'dart:convert';
 class ProductStorageServices {
   static const String _productKey = 'products';
 
-  // Save products list to SharedPreferences
+  
   static Future<void> saveProducts(List<Product> products) async {
     final prefs = await SharedPreferences.getInstance();
     List<String> jsonProducts =
@@ -13,7 +13,7 @@ class ProductStorageServices {
     await prefs.setStringList(_productKey, jsonProducts);
   }
 
-  // Load products list from SharedPreferences
+  
   static Future<List<Product>> loadProducts() async {
     final prefs = await SharedPreferences.getInstance();
     List<String>? jsonProducts = prefs.getStringList(_productKey);

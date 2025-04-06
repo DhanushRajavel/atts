@@ -7,7 +7,6 @@ class AuthService {
     return false;
   }
 
-  // Mock logout method
   Future<void> logout() async {
     await Future.delayed(const Duration(seconds: 1));
   }

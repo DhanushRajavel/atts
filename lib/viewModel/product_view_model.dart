@@ -12,28 +12,28 @@ class ProductViewModel extends ChangeNotifier {
     loadProducts();
   }
 
-  // Add Product
+  
   Future<void> addProduct(Product product) async {
     _products.add(product);
     await ProductStorageServices.saveProducts(_products);
     notifyListeners();
   }
 
-  // Update Product
+  
   Future<void> updateProduct(int index, Product updatedProduct) async {
     _products[index] = updatedProduct;
     await ProductStorageServices.saveProducts(_products);
     notifyListeners();
   }
 
-  // Delete Product
+  
   Future<void> deleteProduct(int index) async {
     _products.removeAt(index);
     await ProductStorageServices.saveProducts(_products);
     notifyListeners();
   }
 
-  // Load Products
+  
   Future<void> loadProducts() async {
     _products = await ProductStorageServices.loadProducts();
     notifyListeners();

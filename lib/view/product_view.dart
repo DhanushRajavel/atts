@@ -7,7 +7,7 @@ import 'package:jwy/view/login_view.dart';
 import 'package:jwy/view/widgets/add_product_dialog.dart';
 import 'package:jwy/view/widgets/product_card.dart';
 import 'package:jwy/viewmodel/product_view_model.dart';
-import 'package:jwy/viewmodel/login_view_model.dart'; // Add this import
+import 'package:jwy/viewmodel/login_view_model.dart'; 
 import 'package:provider/provider.dart';
 
 class ProductView extends StatelessWidget {
@@ -16,7 +16,7 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<ProductViewModel>(context);
-    final loginViewModel = Provider.of<LoginViewModel>(context); // Access LoginViewModel
+    final loginViewModel = Provider.of<LoginViewModel>(context); 
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
@@ -41,7 +41,7 @@ class ProductView extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                    loginViewModel.logout(); // Call logout to update state
+                    loginViewModel.logout(); 
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => LoginView()),
